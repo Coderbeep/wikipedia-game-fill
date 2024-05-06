@@ -1,0 +1,158 @@
+.game {
+    width: 100%;
+    overflow: hidden;
+}
+
+#title-container {
+    display: flex; 
+    justify-content: center; 
+    padding-top: 10px;
+}
+
+#game-title {
+    text-align:center; 
+    background-color: #d2c9c9;
+    box-shadow: rgb(184, 185, 186) 3px 3px 3px;
+    color: rgb(52, 52, 52);
+    border-radius: 3px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: min-content;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+#submit-form {
+    display: flex;
+    justify-content: left;
+    gap: 10px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+#input-info {
+    color: crimson;
+    font-weight: bold;
+}
+
+.game-content {
+    margin: 20px;
+    background-color: #F8F9FA;
+    border-radius: 15px;
+    padding: 1em;
+    width: 70%;
+    float: left;
+    overflow: hidden;
+    padding: 1em;
+    box-shadow: rgb(184, 185, 186) 4px 4px 4px 5px;
+}
+
+.game-stats {
+    border-radius: 15px;
+    margin: 20px;
+    background-color: #F8F9FA;
+    width: 400px;
+    min-height: 80vh;
+    height: auto;
+    float: left;
+    overflow: hidden;
+    box-shadow: rgb(184, 185, 186) 4px 4px 4px 5px;
+}
+
+.game-stats-total {
+    margin-top: 50px;
+    font-size: 2em;
+    text-align: center;
+    font-weight: bold;
+}
+
+#num_guessed {
+    color: limegreen;
+    text-shadow: rgb(142, 221, 145) 1px 0 5px;;
+}
+
+table {
+    display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    text-indent: initial;
+    border-spacing: 2px;
+    border-color: gray;
+    word-break: break-word;
+    margin: 0 auto;
+    width: 80%;
+}
+
+th:first-child, td:first-child {
+    width: 20%;
+    text-align: right;
+    padding-right: 10px;
+    border-right: 2px solid #ddd;
+}
+
+th:not(:first-child), td:not(:first-child) {
+    padding-left: 10px;
+    width: 80%;
+}
+
+th:first-child, th:not(:first-child) {
+    border-bottom: 2px solid #ddd;
+}
+
+
+th {
+    font-weight: bold;
+    text-align: center;
+}
+
+#game-stats-words-entered {
+    margin-top: 50px;
+    justify-content: center;
+    border-collapse: separate;
+}
+
+.word-box {
+    background-color: #d2c9c9;
+    box-shadow: rgb(184, 185, 186) 1px 1px 1px;
+    color: rgb(52, 52, 52);
+    border-radius: 3px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: monospace;
+    line-height: 1.2;
+    display: inline-block;
+    text-align: center;
+}
+
+.word-box-guessed {
+    background-color: limegreen;
+    display: inline;
+    font-weight: bold;
+    border-radius: 4px;
+    box-shadow: rgb(184, 185, 186) 1px 1px 1px;
+}
+
+.word-box-similarity {
+    color: rgb(118, 85, 37)
+}
+
+.word-box:hover {
+    background-color: #f0f0f0;
+}
+
+
+
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.title-box {
+    position: relative;
+    font-size: 1.7em;
+    font-weight: bold;
+    display: inline-block;
+    margin: 2px;
+}

@@ -1,0 +1,73 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <div class="game">
+        <div class="game-stats">
+            <div id='title-container'>
+                <h1 id='game-title'>WikiGuess</h1>
+            </div>
+            
+
+
+            <div class="game-stats-total">   
+                <span id="num_guessed"> {{game_data["num_guessed"]}}</span> 
+                <span> | </span>
+                <span> {{game_data["num_total"]}} </span> 
+            </div>
+
+
+            <table id="game-stats-words-entered", class="unselectable">
+                <tr>
+                  <th>No.</th>
+                  <th>Word</th>
+                </tr>
+            </table>
+        </div>
+
+        <div class="game-content">
+            <div id="submit-form">
+
+                <div>
+                    <form id="wordForm" method="POST" data-add-word-url="{{ url_for('main.add_word')}}" style="padding-bottom: 10px;">
+                        <label for="wordInput">Enter word:  </label>
+                        <input type="text" id="wordInput" name="word">
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+
+                <div>
+                    <span id="input-info"> </span>
+                </div> 
+
+            </div>
+            {%- set ns = namespace(c = 0) -%}
+            <div class="title">
+                {%- for word in display_title -%}
+                    {%- if word.guessed -%}
+                        {%- set ns.c = ns.c + 1 -%}
+                        <span class="word unselectable"> {{ word.word }} </span>
+                    {%- else -%}
+                        {%- set ns.c = ns.c + 1 -%}
+                        <span class="word-box word title-box unselectable", id="{{ns.c}}"> {{ (word.word|length) * ' ' }}</span>
+                    {%- endif -%}
+                {%- endfor -%}
+            </div>
+
+            {%- for paragraph in display_text -%}
+                <p id="textWithHighlights"></p>
+                    {%- for word in paragraph -%}
+                        {%- if word.guessed -%}
+                            {%- set ns.c = ns.c + 1 -%}
+                            <span class="word unselectable">{{word.word}}</span>
+                        {%- else -%}
+                            {%- set ns.c = ns.c + 1 -%}
+                            <span class="word-box word unselectable", id="{{ns.c}}"> {{ (word.word|length)  * ' ' }} </span>
+                        {%- endif -%}
+                    {%- endfor -%}
+                </p>
+            {%- endfor -%}
+        </div>
+    </div>
+
+<script src="{{ url_for('static', filename='wiki_guess.js') }}"></script>
+{% endblock %}
